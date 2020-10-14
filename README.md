@@ -15,13 +15,13 @@ This project is on an assistant that can speak and can give you a reply. It also
 
 5.Download YouTube video
 
-6.Play guess the number game
+6.Play song/music
 
 7.Google Search(for ex:- book store near me, car shop near me)
 
 8.Open Browser(for ex:- google.com)
 
-9.Song/Music
+
 
 ### 📌Note :-  This project is under development and can have some errors and problem so please stay tuned for the error, glitches to be fixed. More features will be added to this project. 
 
