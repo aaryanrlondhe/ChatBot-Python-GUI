@@ -217,7 +217,7 @@ def speak():
 
 speak=Button(root,text='SAY'+''+''+'>>>',fg="white",bg="#cb464e",width=20,command=speak,font=("Arial Bold",11),border=3)
 speak.grid(row=1,column=0)
-text=Text(root,bg='#fcfcec',fg='Black',font=("Arial Bold",10))
+text=Text(root,bg='#fcfcec',fg='Black',font=("Consolas 10 bold"))
 text.grid(row=0,column=0,columnspan=3)
 a=Entry(root,width=70)
 send=Button(root,text='SEND'+''+'>>>',fg="white",bg="#cb464e",width=20,command=send,font=("Arial Bold",11),border=3).grid(row=1,column=2)
