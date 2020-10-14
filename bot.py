@@ -9,11 +9,13 @@ import youtube_dl
 import random
 import platform
 import speedtest
-from tkinter import *
 import calendar
 import pyaudio
+import webbrowser
 from playsound import playsound
 import speech_recognition as sr
+from tkinter import *
+from tkinter import filedialog
 root=Tk()
 root.configure(bg='#4b7fa4')
 def send():
@@ -58,7 +60,7 @@ def send():
         
     elif(a.get()=='what can you do'or a.get()=='?'):
         a.delete(0,END)
-        text.insert(END,"\n"+"Bot:\n1.Generate Password\n2.Get system information\n3.To check your internet speed\n4.Calender of a given year\n5.Download youtube video\n6.Play guess the number game\n7.Google Search(for ex:- book store near me, car shop near me)\n8.Open Browser(for ex:- google.com)\n9.Song/Music")
+        text.insert(END,"\n"+"Bot:\n1.Generate Password\n2.Get system information\n3.To check your internet speed\n4.Calender of a given year\n5.Download youtube video\n6.Play Music and Sound\n7.Google Search(for ex:- book store near me, car shop near me)\n8.Open Browser(for ex:- google.com)")
         text5="Here's what I can do"
         voice(text5)
         text.insert(END,"\n"+ "------------------------------------------------------------------------------------------------------------------------------------------")
@@ -149,7 +151,49 @@ def send():
             mybutton.destroy()
 
         mybutton=Button(root,text="TEST SPEED",width=20,command=speed,border=3,fg="white",bg="#cb464e",font=("Arial Bold",11))
-        mybutton.grid(row=2,column=1)           
+        mybutton.grid(row=2,column=1) 
+    elif(a.get()=='play music'or a.get()=='play song'or a.get()=='6'):
+        text12="Please select a song from your computer"
+        voice(text12)
+        a.delete(0,END)
+        import browse 
+        execfile('browse.py')
+        text.insert(END,"\n"+ "------------------------------------------------------------------------------------------------------------------------------------------")
+        
+
+    elif(a.get()=='google'or a.get()=='google search'or a.get()=='7'):
+        a.delete(0,END)
+        text13="Enter what do you want to  Google Search and click on search button"
+        voice(text13)
+        text.insert(END,"\n"+ "Bot:"+text13)
+        def google():
+            try: 
+                from googlesearch import search 
+            except ImportError: 
+                print("No module named 'google' found") 
+            query=a.get()
+            for j in search(query, tld="co.in", num=6, stop=6, pause=2):
+                webbrowser.open(j)
+
+            mybutton.destroy()
+            text.insert(END,"\n"+ "------------------------------------------------------------------------------------------------------------------------------------------")
+            a.delete(0,END)
+
+        mybutton=Button(root,text="SEARCH",width=20,command=google,border=3,fg="white",bg="#cb464e",font=("Arial Bold",11))
+        mybutton.grid(row=2,column=1)  
+    elif(a.get()=='browser'or a.get()=='Browser'or a.get()=='8'):
+        a.delete(0,END)
+        text14="Enter the link of website To open in webrowser and click on search button"
+        voice(text14)
+        text.insert(END,"\n"+ "Bot:"+text14+"for Ex google.com")
+        def bro2():
+            webbrowser.open(a.get())
+            mybutton.destroy()
+            text.insert(END,"\n"+ "------------------------------------------------------------------------------------------------------------------------------------------")
+            a.delete(0,END)       
+
+        mybutton=Button(root,text="SEARCH",width=20,command=bro2,border=3,fg="white",bg="#cb464e",font=("Arial Bold",11))
+        mybutton.grid(row=2,column=1)        
     else:
         a.delete(0,END)
         text12="Sorry I did not get that"
@@ -169,6 +213,7 @@ def speak():
         #text.insert(END,"\n"+send)
     except LookupError:
         text.insert(END,"Try again")
+
 
 speak=Button(root,text='SAY'+''+''+'>>>',fg="white",bg="#cb464e",width=20,command=speak,font=("Arial Bold",11),border=3)
 speak.grid(row=1,column=0)
