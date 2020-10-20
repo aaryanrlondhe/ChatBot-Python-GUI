@@ -25,6 +25,9 @@ This project is on an assistant that can speak and can give you a reply. It also
 
 ### 📌Note :-  This project is under development and can have some errors and problem so please stay tuned for the error, glitches to be fixed. More features will be added to this project. 
 
+# *Output :-*
+
+![](Output.PNG)
 # *Contact Us :-*
 
 
