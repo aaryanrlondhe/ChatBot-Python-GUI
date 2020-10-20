@@ -27,7 +27,7 @@ This project is on an assistant that can speak and can give you a reply. It also
 
 # *Output :-*
 
-![](Output.PNG)
+![](Capture.PNG)
 # *Contact Us :-*
 
 
